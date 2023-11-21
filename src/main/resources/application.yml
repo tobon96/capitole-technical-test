@@ -4,12 +4,16 @@ server:
     context-path: /base
 
 spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
   datasource:
-    url: jdbc:h2:mem:base;DATABASE_TO_UPPER=false;DB_CLOSE_DELAY=-1
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/base
+    jdbc-url: jdbc:postgresql://localhost:5432/base
     username: dbuser
     password: dbpassword
-    driverClassName: org.h2.Driver
-
   flyway:
     url: ${spring.datasource.url}
     user: ${spring.datasource.username}

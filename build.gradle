@@ -17,15 +17,18 @@ repositories {
 
 dependencies {
 	// Implementation
-	implementation 'org.springframework.boot:spring-boot-starter-web:3.1.5'
-	implementation 'org.flywaydb:flyway-core:10.0.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.1.2'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.2'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:3.1.2'
+	implementation 'org.flywaydb:flyway-core:9.16.1'
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+	implementation 'org.postgresql:postgresql:42.6.0'
 
 	// Runtime
 	runtimeOnly 'com.h2database:h2:2.2.224'
 
 	// Test
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.5'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.2'
 }
 
 tasks.named('bootBuildImage') {

@@ -1,4 +1,4 @@
 package com.capitole.technicaltest.domain.model.entity;
 
-public record Brand(String id, String name) {
+public record Brand(Long id, String name) {
 }
