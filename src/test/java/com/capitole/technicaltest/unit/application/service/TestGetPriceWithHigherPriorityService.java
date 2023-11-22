@@ -46,9 +46,8 @@ public class TestGetPriceWithHigherPriorityService {
         LocalDateTime.of(2023, 12, 24, 10, 0, 0));
 
     // Then
-    assertTrue(actualPriceWithHigherPriority.isPresent());
-    assertEquals(expectedPrice.priority(), actualPriceWithHigherPriority.get().priority());
-    assertEquals(expectedPrice.value(), actualPriceWithHigherPriority.get().value());
+    assertEquals(expectedPrice.priority(), actualPriceWithHigherPriority.priority());
+    assertEquals(expectedPrice.value(), actualPriceWithHigherPriority.value());
   }
 
   private Brand buildParameterBrand() {

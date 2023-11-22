@@ -9,5 +9,5 @@ import java.util.Optional;
 
 public interface GetPriceWithHigherPriorityQuery {
 
-    Optional<Price> execute(Brand brand, Product product, LocalDateTime date);
+    Price execute(Brand brand, Product product, LocalDateTime date);
 }

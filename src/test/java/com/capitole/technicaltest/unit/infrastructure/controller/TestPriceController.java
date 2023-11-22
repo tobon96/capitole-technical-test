@@ -1,8 +1,8 @@
 package com.capitole.technicaltest.unit.infrastructure.controller;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
-import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.aggregate.Price;
+import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueObject.Currency;
 import com.capitole.technicaltest.domain.model.valueObject.DateRange;
@@ -14,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -32,7 +31,7 @@ public class TestPriceController {
     @Test
     public void givenBrandProductAndDateParameters_shouldReturnPriceThatApplies() {
         // Given
-        var expectedPrice = Optional.of(buildPrice());
+        var expectedPrice = buildPrice();
         when(query
             .execute(buildParameterBrand(),
                 buildParamenterProduct(),

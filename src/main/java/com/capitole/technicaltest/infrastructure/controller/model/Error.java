@@ -1,0 +1,33 @@
+package com.capitole.technicaltest.infrastructure.controller.model;
+
+public record Error(String code, String error, String cause) {
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  public static class Builder {
+    private String code;
+    private String error;
+    private String cause;
+
+    public Builder code(String code) {
+      this.code = code;
+      return this;
+    }
+
+    public Builder error(String error) {
+      this.error = error;
+      return this;
+    }
+
+    public Builder cause(String cause) {
+      this.cause = cause;
+      return this;
+    }
+
+    public Error build() {
+      return new Error(code, error, cause);
+    }
+  }
+}
