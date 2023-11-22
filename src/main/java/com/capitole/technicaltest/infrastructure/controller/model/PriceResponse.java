@@ -1,6 +1,6 @@
 package com.capitole.technicaltest.infrastructure.controller.model;
 
-import com.capitole.technicaltest.domain.model.aggregate.Price;
+import com.capitole.technicaltest.domain.model.entity.Price;
 
 import java.time.LocalDateTime;
 
@@ -18,7 +18,7 @@ public record PriceResponse(Long productId,
         .priceList(price.priceList())
         .startDate(price.dateRange().startDate())
         .endDate(price.dateRange().endDate())
-        .amount(price.value().amount())
+        .amount(price.currency().amount())
         .build();
   }
 

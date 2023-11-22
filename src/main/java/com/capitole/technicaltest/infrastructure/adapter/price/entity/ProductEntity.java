@@ -11,7 +11,12 @@ public class ProductEntity {
     @Id
     private Long id;
 
-    private String name;
+    public ProductEntity() {
+    }
+
+    public ProductEntity(Long id) {
+        this.id = id;
+    }
 
     public Long getId() {
         return id;

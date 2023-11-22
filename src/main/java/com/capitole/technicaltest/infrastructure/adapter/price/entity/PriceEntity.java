@@ -14,13 +14,13 @@ public class PriceEntity {
     private UUID id;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "brandId", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "brandId", referencedColumnName = "id")
     private BrandEntity brand;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "productId", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "productId", referencedColumnName = "id")
     private ProductEntity product;
     private Integer priority;
     private Double price;
@@ -28,6 +28,21 @@ public class PriceEntity {
     private String currency;
     @Column(name = "price_list")
     private Integer priceList;
+
+    public PriceEntity() {
+    }
+
+    public PriceEntity(UUID id, BrandEntity brand, LocalDateTime startDate, LocalDateTime endDate, ProductEntity product, Integer priority, Double price, String currency, Integer priceList) {
+        this.id = id;
+        this.brand = brand;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.product = product;
+        this.priority = priority;
+        this.price = price;
+        this.currency = currency;
+        this.priceList = priceList;
+    }
 
     public UUID getId() {
         return id;

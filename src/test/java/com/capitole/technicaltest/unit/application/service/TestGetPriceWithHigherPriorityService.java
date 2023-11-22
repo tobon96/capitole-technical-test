@@ -2,11 +2,12 @@ package com.capitole.technicaltest.unit.application.service;
 
 import com.capitole.technicaltest.application.service.GetPriceWithHigherPriorityService;
 import com.capitole.technicaltest.domain.model.entity.Brand;
-import com.capitole.technicaltest.domain.model.aggregate.Price;
+import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueObject.Currency;
 import com.capitole.technicaltest.domain.model.valueObject.DateRange;
 import com.capitole.technicaltest.domain.repository.PriceRepository;
+import com.capitole.technicaltest.infrastructure.exception.PriceNotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,8 +18,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -31,63 +32,61 @@ public class TestGetPriceWithHigherPriorityService {
   private GetPriceWithHigherPriorityService service;
 
   @Test
-  public void given_shouldReturnPriceWithHigherPriority() {
+  public void givenExecute_shouldReturnPriceWithHigherPriority() {
     // Given
+    var brand = buildParameterBrand();
+    var product = buildParameterProduct();
+    var date = LocalDateTime.of(2023, 12, 24, 10, 0, 0);
     var expectedPrice = buildExpectedPrice();
     when(priceRepository
-        .findPriceWithHigherPriority(buildParameterBrand(),
-            buildParamenterProduct(),
-            LocalDateTime.of(2023, 12, 24, 10, 0, 0)))
+        .findPriceWithHigherPriority(brand, product, date))
         .thenReturn(buildPricesList());
 
     // When
-    var actualPriceWithHigherPriority = service.execute(buildParameterBrand(),
-        buildParamenterProduct(),
-        LocalDateTime.of(2023, 12, 24, 10, 0, 0));
+    var actualPriceWithHigherPriority = service.execute(brand, product, date);
 
     // Then
     assertEquals(expectedPrice.priority(), actualPriceWithHigherPriority.priority());
-    assertEquals(expectedPrice.value(), actualPriceWithHigherPriority.value());
+    assertEquals(expectedPrice.currency(), actualPriceWithHigherPriority.currency());
   }
 
-  private Brand buildParameterBrand() {
-    return new Brand(1L, null);
-  }
+  @Test
+  public void givenExecute_shouldThrowException() {
+    // Given
+    var brand = buildParameterBrand();
+    var product = buildParameterProduct();
+    var date = LocalDateTime.of(2024, 2, 24, 10, 0, 0);
+    when(priceRepository
+        .findPriceWithHigherPriority(brand, product, date))
+        .thenReturn(List.of());
 
-  private Product buildParamenterProduct() {
-    return new Product(55555L);
-  }
+    // When
+    var exception = assertThrows(PriceNotFoundException.class, () -> service.execute(brand, product, date));
 
-  private List<Price> buildPricesList() {
-    return List.of(
-        new Price(UUID.randomUUID().toString(),
-            new Product(55555L),
-            new Brand(1L, "ZARA"),
-            new DateRange(LocalDateTime.of(2023, 11, 21, 10, 0, 0),
-                LocalDateTime.of(2023, 12, 31, 23, 59, 59)),
-            new Currency("EUR", 55.0),
-            1,
-            1),
-        new Price(UUID.randomUUID().toString(),
-            new Product(55555L),
-            new Brand(1L, "ZARA"),
-            new DateRange(LocalDateTime.of(2023, 12, 15, 10, 0, 0),
-                LocalDateTime.of(2024, 1, 31, 23, 59, 59)),
-            new Currency("EUR", 50.0),
-            2,
-            2)
-    );
+    // Then
+    assertEquals(exception.ERROR_CODE, "priceNotFound");
   }
 
   private Price buildExpectedPrice() {
-    return new Price(UUID.randomUUID().toString(),
-        new Product(55555L),
-        new Brand(1L, "ZARA"),
-        new DateRange(LocalDateTime.of(2023, 12, 15, 10, 0, 0),
-            LocalDateTime.of(2024, 1, 31, 23, 59, 59)),
-        new Currency("EUR", 50.0),
-        2,
-        2);
+    return Price.builder()
+        .id(UUID.randomUUID().toString())
+        .brand(Brand.builder()
+            .id(1L)
+            .name("ZARA")
+            .build())
+        .product(Product.builder()
+            .id(55555L)
+            .build())
+        .dateRange(DateRange.builder()
+            .startDate(LocalDateTime.of(2023, 12, 15, 10, 0, 0))
+            .endDate(LocalDateTime.of(2024, 1, 31, 23, 59, 59))
+            .build())
+        .priority(2)
+        .priceList(2)
+        .currency(Currency.builder()
+            .amount(50.0)
+            .isoName("EUR")
+            .build())
+        .build();
   }
-
 }

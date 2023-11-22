@@ -31,8 +31,8 @@ public class PriceController {
     public Response<PriceResponse, Error> getPriceForDate(@RequestParam(name = "brand_id") Long brandId,
                                                           @RequestParam(name = "product_id") Long productId,
                                                           @RequestParam @Valid @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime date) {
-        var result = query.execute(new Brand(brandId, null),
-            new Product(productId),
+        var result = query.execute(Brand.builder().id(brandId).build(),
+            Product.builder().id(productId).build(),
             date);
         var response = PriceResponse.fromDomain(result);
         return Response.ok(response);

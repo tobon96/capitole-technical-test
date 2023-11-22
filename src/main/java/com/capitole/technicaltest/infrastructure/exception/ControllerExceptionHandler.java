@@ -45,7 +45,7 @@ public class ControllerExceptionHandler {
         Error.builder()
             .code(ex.ERROR_CODE)
             .error(ex.getClass().getSimpleName())
-            .cause("Incorrect parameters: Price not found")
+            .cause("Incorrect parameters: Entity Not found")
             .build());
   }
 }

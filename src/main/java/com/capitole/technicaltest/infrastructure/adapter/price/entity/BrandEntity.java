@@ -13,6 +13,14 @@ public class BrandEntity {
 
     private String name;
 
+    public BrandEntity() {
+    }
+
+    public BrandEntity(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
@@ -28,4 +36,5 @@ public class BrandEntity {
     public void setName(String name) {
         this.name = name;
     }
+
 }
