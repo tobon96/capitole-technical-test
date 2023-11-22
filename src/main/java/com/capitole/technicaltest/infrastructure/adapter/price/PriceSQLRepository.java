@@ -1,7 +1,7 @@
 package com.capitole.technicaltest.infrastructure.adapter.price;
 
 import com.capitole.technicaltest.domain.model.entity.Brand;
-import com.capitole.technicaltest.domain.model.entity.Price;
+import com.capitole.technicaltest.domain.model.aggregate.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.repository.PriceRepository;
 import org.springframework.stereotype.Repository;
@@ -17,7 +17,6 @@ public class PriceSQLRepository implements PriceRepository {
     public PriceSQLRepository(PriceJpaRepository jpaRepository) {
         this.jpaRepository = jpaRepository;
     }
-
 
     @Override
     public List<Price> findPriceWithHigherPriority(Brand brand, Product product, LocalDateTime date) {

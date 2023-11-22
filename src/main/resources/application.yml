@@ -5,7 +5,6 @@ server:
 
 spring:
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: none
   datasource:
@@ -18,5 +17,6 @@ spring:
     url: ${spring.datasource.url}
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
+    locations: classpath:db/migration
     enabled: true
     clean-disabled: false

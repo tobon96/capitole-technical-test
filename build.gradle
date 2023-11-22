@@ -24,7 +24,7 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
 	implementation 'org.postgresql:postgresql:42.6.0'
 
-	// Runtime
+    // Runtime
 	runtimeOnly 'com.h2database:h2:2.2.224'
 
 	// Test

@@ -2,7 +2,7 @@ package com.capitole.technicaltest.application.service;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
 import com.capitole.technicaltest.domain.model.entity.Brand;
-import com.capitole.technicaltest.domain.model.entity.Price;
+import com.capitole.technicaltest.domain.model.aggregate.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.repository.PriceRepository;
 import org.springframework.stereotype.Service;

@@ -1,5 +1,7 @@
-package com.capitole.technicaltest.domain.model.entity;
+package com.capitole.technicaltest.domain.model.aggregate;
 
+import com.capitole.technicaltest.domain.model.entity.Brand;
+import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueObject.Currency;
 import com.capitole.technicaltest.domain.model.valueObject.DateRange;
 

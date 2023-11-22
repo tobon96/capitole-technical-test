@@ -2,7 +2,7 @@ package com.capitole.technicaltest.infrastructure.controller;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
 import com.capitole.technicaltest.domain.model.entity.Brand;
-import com.capitole.technicaltest.domain.model.entity.Price;
+import com.capitole.technicaltest.domain.model.aggregate.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,7 +21,6 @@ public class PriceController {
     public PriceController(GetPriceWithHigherPriorityQuery query) {
         this.query = query;
     }
-
 
     @GetMapping(value = "/price", produces = MediaType.APPLICATION_JSON_VALUE)
     public Price getPriceForDate(@RequestParam(name = "brand_id") Long brandId,
