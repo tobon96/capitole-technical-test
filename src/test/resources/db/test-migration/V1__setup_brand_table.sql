@@ -1,0 +1,8 @@
+CREATE TABLE brands
+(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO brands (name)
+VALUES ('ZARA');
