@@ -22,7 +22,17 @@
 A technical test for applying to Capitole Consulting.
 With clean architecture, DDD, unit/integration tests, sonar cloud and swagger documentation.
 
-## Documentation
+## Run tests
+To run tests go to the project root folder and enter in the terminal `./gradlew test`
 
+## Run locally
+To run the application, you have two options:
+- Run with dev profile and have a PostgreSQL database running on port 5432.
+- Deploy containers with `docker-compose up`
+
+## Code analysis
+Available code analysis made by Sonar can be found at https://sonarcloud.io/summary/overall?id=tobon96_capitole-technical-test.
+
+## Documentation
 Available endpoints can be found at http://localhost:8080/capitole-test/swagger-ui/index.html. You need
 to be running the application locally in order to be able to access the provided URL.
