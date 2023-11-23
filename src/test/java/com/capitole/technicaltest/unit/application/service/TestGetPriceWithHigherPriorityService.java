@@ -65,7 +65,7 @@ class TestGetPriceWithHigherPriorityService {
     var exception = assertThrows(ResourceNotAvailableException.class, () -> service.execute(brand, product, date));
 
     // Then
-    assertEquals(exception.getMessage(), "Price is not available");
+    assertEquals("Price is not available", exception.getMessage());
   }
 
   private Price buildExpectedPrice() {
