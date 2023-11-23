@@ -1,7 +1,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /capitole_test
+    context-path: /capitole-test
 
 spring:
   jpa:
