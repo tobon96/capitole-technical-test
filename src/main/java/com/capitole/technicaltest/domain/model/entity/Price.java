@@ -1,7 +1,7 @@
 package com.capitole.technicaltest.domain.model.entity;
 
-import com.capitole.technicaltest.domain.model.valueObject.Currency;
-import com.capitole.technicaltest.domain.model.valueObject.DateRange;
+import com.capitole.technicaltest.domain.model.valueobject.Currency;
+import com.capitole.technicaltest.domain.model.valueobject.DateRange;
 
 import java.util.Objects;
 

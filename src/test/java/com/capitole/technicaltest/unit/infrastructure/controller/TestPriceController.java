@@ -2,6 +2,7 @@ package com.capitole.technicaltest.unit.infrastructure.controller;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
 import com.capitole.technicaltest.infrastructure.controller.PriceController;
+import com.capitole.technicaltest.infrastructure.controller.model.Error;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -9,13 +10,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.Collections;
 
 import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @ExtendWith(MockitoExtension.class)
 class TestPriceController {
@@ -46,6 +45,6 @@ class TestPriceController {
         assertNotNull(response);
         assertEquals(true, response.success());
         assertEquals(1, response.data().brandId());
-        assertEquals(Collections.EMPTY_MAP, response.error());
+        assertEquals(Error.builder().build(), response.error());
     }
 }

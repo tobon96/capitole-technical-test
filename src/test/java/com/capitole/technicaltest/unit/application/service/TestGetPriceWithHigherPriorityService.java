@@ -6,8 +6,8 @@ import com.capitole.technicaltest.application.service.GetPriceWithHigherPriority
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
-import com.capitole.technicaltest.domain.model.valueObject.Currency;
-import com.capitole.technicaltest.domain.model.valueObject.DateRange;
+import com.capitole.technicaltest.domain.model.valueobject.Currency;
+import com.capitole.technicaltest.domain.model.valueobject.DateRange;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
