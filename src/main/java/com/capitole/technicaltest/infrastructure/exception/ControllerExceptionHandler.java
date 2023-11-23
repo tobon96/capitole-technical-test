@@ -1,5 +1,6 @@
 package com.capitole.technicaltest.infrastructure.exception;
 
+import com.capitole.technicaltest.application.exception.ResourceNotAvailableException;
 import com.capitole.technicaltest.infrastructure.controller.model.Error;
 import com.capitole.technicaltest.infrastructure.controller.model.Response;
 import org.springframework.http.HttpStatus;
@@ -38,14 +39,14 @@ public class ControllerExceptionHandler {
             .build());
   }
 
-  @ExceptionHandler(value = {PriceNotFoundException.class})
+  @ExceptionHandler(value = {ResourceNotAvailableException.class})
   @ResponseStatus(HttpStatus.NOT_FOUND)
-  public Response<Object, Error> handlePriceNotFoundException(final PriceNotFoundException ex) {
+  public Response<Object, Error> handlePriceNotFoundException(final ResourceNotAvailableException ex) {
     return Response.error(
         Error.builder()
             .code(ex.ERROR_CODE)
             .error(ex.getClass().getSimpleName())
-            .cause("Incorrect parameters: Entity Not found")
+            .cause("Incorrect parameters: Entity not available")
             .build());
   }
 }

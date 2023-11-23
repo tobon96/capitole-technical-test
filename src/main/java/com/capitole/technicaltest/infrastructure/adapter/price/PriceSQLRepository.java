@@ -3,7 +3,7 @@ package com.capitole.technicaltest.infrastructure.adapter.price;
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
-import com.capitole.technicaltest.domain.repository.PriceRepository;
+import com.capitole.technicaltest.application.port.out.PriceRepository;
 import com.capitole.technicaltest.infrastructure.persistence.PriceJpaRepository;
 import org.springframework.stereotype.Repository;
 
