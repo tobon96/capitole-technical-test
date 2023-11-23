@@ -58,9 +58,9 @@ public class TestIntegrationGetPriceWithHighestPriority {
         .andExpect(status().isNotFound())
         .andExpect(jsonPath("$.success").value(false))
         .andExpect(jsonPath("$.data").isEmpty())
-        .andExpect(jsonPath("$.error.code").value("priceNotFound"))
-        .andExpect(jsonPath("$.error.error").value("PriceNotFoundException"))
-        .andExpect(jsonPath("$.error.cause").value("Incorrect parameters: Entity Not found"));
+        .andExpect(jsonPath("$.error.code").value("resourceNotAvailable"))
+        .andExpect(jsonPath("$.error.error").value("PriceNotAvailableException"))
+        .andExpect(jsonPath("$.error.cause").value("Incorrect parameters: Entity not available"));
   }
 
   @Test

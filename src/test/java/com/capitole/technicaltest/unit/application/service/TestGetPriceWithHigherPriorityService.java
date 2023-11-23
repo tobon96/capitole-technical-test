@@ -6,8 +6,8 @@ import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueObject.Currency;
 import com.capitole.technicaltest.domain.model.valueObject.DateRange;
-import com.capitole.technicaltest.domain.repository.PriceRepository;
-import com.capitole.technicaltest.infrastructure.exception.PriceNotFoundException;
+import com.capitole.technicaltest.application.port.out.PriceRepository;
+import com.capitole.technicaltest.application.exception.ResourceNotAvailableException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -61,10 +61,10 @@ public class TestGetPriceWithHigherPriorityService {
         .thenReturn(List.of());
 
     // When
-    var exception = assertThrows(PriceNotFoundException.class, () -> service.execute(brand, product, date));
+    var exception = assertThrows(ResourceNotAvailableException.class, () -> service.execute(brand, product, date));
 
     // Then
-    assertEquals(exception.ERROR_CODE, "priceNotFound");
+    assertEquals(exception.ERROR_CODE, "resourceNotAvailable");
   }
 
   private Price buildExpectedPrice() {

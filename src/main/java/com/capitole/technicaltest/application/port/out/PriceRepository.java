@@ -1,4 +1,4 @@
-package com.capitole.technicaltest.domain.repository;
+package com.capitole.technicaltest.application.port.out;
 
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Price;
