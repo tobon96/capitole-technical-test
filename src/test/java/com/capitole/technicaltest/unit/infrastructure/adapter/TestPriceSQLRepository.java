@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class TestPriceSQLRepository {
+class TestPriceSQLRepository {
 
   @Mock
   private PriceJpaRepository jpaRepository;
@@ -25,7 +25,7 @@ public class TestPriceSQLRepository {
   private PriceSQLRepository repository;
 
   @Test
-  public void givenParameters_shouldReturnListOfDbEntities() {
+  void givenParameters_shouldReturnListOfDbEntities() {
     // Given
     var brand = buildParameterBrand();
     var product = buildParameterProduct();

@@ -20,13 +20,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @Import(MigrationConfiguration.class)
-public class TestIntegrationGetPriceWithHighestPriority {
+class TestIntegrationGetPriceWithHighestPriority {
 
   @Autowired
   private MockMvc mockMvc;
 
   @Test
-  public void givenRestCallToControllerAndWrongBrandIdParameter_shouldReturnError() throws Exception {
+  void givenRestCallToControllerAndWrongBrandIdParameter_shouldReturnError() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "a");
     params.add("product_id", "35455");
@@ -45,7 +45,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
   }
 
   @Test
-  public void givenRestCallToControllerAndNonExistentProduct_shouldReturnError() throws Exception {
+  void givenRestCallToControllerAndNonExistentProduct_shouldReturnError() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35456");
@@ -65,7 +65,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
 
   @Test
   @Tag("First Scenario: 10:00 of day 14 for product 35455 and brand 1 (ZARA)")
-  public void givenRestCallToControllerForFistRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
+  void givenRestCallToControllerForFistRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35455");
@@ -88,7 +88,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
 
   @Test
   @Tag("First Scenario: 16:00 of day 14 for product 35455 and brand 1 (ZARA)")
-  public void givenRestCallToControllerForSecondRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
+  void givenRestCallToControllerForSecondRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35455");
@@ -111,7 +111,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
 
   @Test
   @Tag("First Scenario: 21:00 of day 14 for product 35455 and brand 1 (ZARA)")
-  public void givenRestCallToControllerForThirdRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
+  void givenRestCallToControllerForThirdRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35455");
@@ -134,7 +134,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
 
   @Test
   @Tag("First Scenario: 10:00 of day 15 for product 35455 and brand 1 (ZARA)")
-  public void givenRestCallToControllerForFourthRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
+  void givenRestCallToControllerForFourthRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35455");
@@ -157,7 +157,7 @@ public class TestIntegrationGetPriceWithHighestPriority {
 
   @Test
   @Tag("First Scenario: 21:00 of day 16 for product 35455 and brand 1 (ZARA)")
-  public void givenRestCallToControllerForFifthRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
+  void givenRestCallToControllerForFifthRequestedScenario_shouldReturnPriceThatApplies() throws Exception {
     var params = new LinkedMultiValueMap<String, String>();
     params.add("brand_id", "1");
     params.add("product_id", "35455");
