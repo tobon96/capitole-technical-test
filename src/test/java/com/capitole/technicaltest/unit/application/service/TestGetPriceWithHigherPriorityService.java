@@ -1,13 +1,13 @@
 package com.capitole.technicaltest.unit.application.service;
 
+import com.capitole.technicaltest.application.exception.ResourceNotAvailableException;
+import com.capitole.technicaltest.application.port.out.PriceRepository;
 import com.capitole.technicaltest.application.service.GetPriceWithHigherPriorityService;
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueObject.Currency;
 import com.capitole.technicaltest.domain.model.valueObject.DateRange;
-import com.capitole.technicaltest.application.port.out.PriceRepository;
-import com.capitole.technicaltest.application.exception.ResourceNotAvailableException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,11 +19,12 @@ import java.util.List;
 import java.util.UUID;
 
 import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class TestGetPriceWithHigherPriorityService {
+class TestGetPriceWithHigherPriorityService {
 
   @Mock
   private PriceRepository priceRepository;
@@ -32,7 +33,7 @@ public class TestGetPriceWithHigherPriorityService {
   private GetPriceWithHigherPriorityService service;
 
   @Test
-  public void givenExecute_shouldReturnPriceWithHigherPriority() {
+  void givenExecute_shouldReturnPriceWithHigherPriority() {
     // Given
     var brand = buildParameterBrand();
     var product = buildParameterProduct();
@@ -51,7 +52,7 @@ public class TestGetPriceWithHigherPriorityService {
   }
 
   @Test
-  public void givenExecute_shouldThrowException() {
+  void givenExecute_shouldThrowException() {
     // Given
     var brand = buildParameterBrand();
     var product = buildParameterProduct();
@@ -64,7 +65,7 @@ public class TestGetPriceWithHigherPriorityService {
     var exception = assertThrows(ResourceNotAvailableException.class, () -> service.execute(brand, product, date));
 
     // Then
-    assertEquals(exception.ERROR_CODE, "resourceNotAvailable");
+    assertEquals(exception.getMessage(), "Price is not available");
   }
 
   private Price buildExpectedPrice() {

@@ -18,7 +18,7 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
 @ExtendWith(MockitoExtension.class)
-public class TestPriceController {
+class TestPriceController {
 
     @Mock
     private GetPriceWithHigherPriorityQuery query;
@@ -27,7 +27,7 @@ public class TestPriceController {
     private PriceController priceController;
 
     @Test
-    public void givenBrandProductAndDateParameters_shouldReturnResponseWithPrice() {
+    void givenBrandProductAndDateParameters_shouldReturnResponseWithPrice() {
         // Given
         var expectedPrice = buildPrice();
         when(query
@@ -44,8 +44,8 @@ public class TestPriceController {
 
         // Then
         assertNotNull(response);
-        assertEquals(response.success(), true);
-        assertEquals(response.data().brandId(), 1);
-        assertEquals(response.error(), Collections.EMPTY_MAP);
+        assertEquals(true, response.success());
+        assertEquals(1, response.data().brandId());
+        assertEquals(Collections.EMPTY_MAP, response.error());
     }
 }

@@ -9,6 +9,10 @@ import com.capitole.technicaltest.infrastructure.adapter.price.entity.PriceEntit
 
 public class PriceMapper {
 
+    private PriceMapper() {
+
+    }
+
     public static Price toDomain(PriceEntity priceEntity) {
         return Price.builder()
             .id(priceEntity.getId().toString())

@@ -6,10 +6,10 @@ import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.buildP
 import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.buildPricesListWithSameId;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class TestPrice {
+class TestPrice {
 
   @Test
-  public void givenPriceDomainEntities_shouldValidateEquality() {
+   void givenPriceDomainEntities_shouldValidateEquality() {
     var notEqualPriceOne = buildPrice();
     var notEqualPriceTwo = buildPrice();
 

@@ -44,7 +44,7 @@ public class ControllerExceptionHandler {
   public Response<Object, Error> handlePriceNotFoundException(final ResourceNotAvailableException ex) {
     return Response.error(
         Error.builder()
-            .code(ex.ERROR_CODE)
+            .code(ResourceNotAvailableException.ERROR_CODE)
             .error(ex.getClass().getSimpleName())
             .cause("Incorrect parameters: Entity not available")
             .build());
