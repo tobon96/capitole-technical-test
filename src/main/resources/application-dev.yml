@@ -9,10 +9,10 @@ spring:
       ddl-auto: none
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://${DB_HOSTNAME}:5432/base
-    jdbc-url: jdbc:postgresql://${DB_HOSTNAME}:5432/base
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/base
+    jdbc-url: jdbc:postgresql://localhost:5432/base
+    username: dbuser
+    password: dbpassword
   flyway:
     url: ${spring.datasource.url}
     user: ${spring.datasource.username}
