@@ -7,17 +7,17 @@
 ![Code style](https://img.shields.io/badge/Code%20style-Google-lightgray?style=for-the-badge&logo=Google)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=coverage)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=bugs)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=cdanmontoya_backend-base&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=cdanmontoya_backend-base) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=coverage)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=bugs)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=tobon96_capitole-technical-test&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=tobon96_capitole-technical-test) 
 
 A technical test for applying to Capitole Consulting.
 With clean architecture, DDD, unit/integration tests, sonar cloud and swagger documentation.

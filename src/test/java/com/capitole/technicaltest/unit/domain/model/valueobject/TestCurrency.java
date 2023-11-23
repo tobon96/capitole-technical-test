@@ -1,6 +1,6 @@
 package com.capitole.technicaltest.unit.domain.model.valueobject;
 
-import com.capitole.technicaltest.domain.model.valueObject.Currency;
+import com.capitole.technicaltest.domain.model.valueobject.Currency;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

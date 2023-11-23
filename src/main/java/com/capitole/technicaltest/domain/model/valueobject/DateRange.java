@@ -1,4 +1,4 @@
-package com.capitole.technicaltest.domain.model.valueObject;
+package com.capitole.technicaltest.domain.model.valueobject;
 
 import java.time.LocalDateTime;
 

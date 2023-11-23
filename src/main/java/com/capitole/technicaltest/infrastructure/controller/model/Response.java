@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import java.time.LocalDateTime;
 import java.util.Collections;
 
-
 public record Response<T, E>(
     Boolean success,
     LocalDateTime timestamp,
@@ -64,7 +63,7 @@ public record Response<T, E>(
 
     @SuppressWarnings("unchecked")
     public Builder<T, E> error(E error) {
-      this.error = error != null ? error : (E) Collections.emptyMap();
+      this.error = error != null ? error : (E) Error.builder().build();
       return this;
     }
 

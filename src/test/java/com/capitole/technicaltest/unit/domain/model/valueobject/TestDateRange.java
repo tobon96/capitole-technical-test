@@ -1,6 +1,6 @@
 package com.capitole.technicaltest.unit.domain.model.valueobject;
 
-import com.capitole.technicaltest.domain.model.valueObject.DateRange;
+import com.capitole.technicaltest.domain.model.valueobject.DateRange;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

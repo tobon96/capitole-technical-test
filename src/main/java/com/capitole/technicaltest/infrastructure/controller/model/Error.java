@@ -1,5 +1,8 @@
 package com.capitole.technicaltest.infrastructure.controller.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public record Error(String code, String error, String cause) {
 
   public static Builder builder() {
