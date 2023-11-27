@@ -1,8 +1,8 @@
 package com.capitole.technicaltest.unit.factory.persistence;
 
-import com.capitole.technicaltest.infrastructure.adapter.price.entity.BrandEntity;
-import com.capitole.technicaltest.infrastructure.adapter.price.entity.PriceEntity;
-import com.capitole.technicaltest.infrastructure.adapter.price.entity.ProductEntity;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity.BrandEntity;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity.PriceEntity;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity.ProductEntity;
 
 import java.time.LocalDateTime;
 import java.util.List;

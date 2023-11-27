@@ -1,6 +1,6 @@
-package com.capitole.technicaltest.infrastructure.persistence;
+package com.capitole.technicaltest.infrastructure.adapter.out.persistence.price;
 
-import com.capitole.technicaltest.infrastructure.adapter.price.entity.PriceEntity;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity.PriceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

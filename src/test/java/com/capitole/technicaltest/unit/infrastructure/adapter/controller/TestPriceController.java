@@ -1,8 +1,8 @@
-package com.capitole.technicaltest.unit.infrastructure.controller;
+package com.capitole.technicaltest.unit.infrastructure.adapter.controller;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
-import com.capitole.technicaltest.infrastructure.controller.PriceController;
-import com.capitole.technicaltest.infrastructure.controller.model.Error;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.PriceController;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.Error;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

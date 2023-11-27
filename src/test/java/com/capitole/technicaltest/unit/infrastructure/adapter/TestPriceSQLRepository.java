@@ -1,7 +1,7 @@
 package com.capitole.technicaltest.unit.infrastructure.adapter;
 
-import com.capitole.technicaltest.infrastructure.adapter.price.PriceSQLRepository;
-import com.capitole.technicaltest.infrastructure.persistence.PriceJpaRepository;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.PriceSQLRepository;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.PriceJpaRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

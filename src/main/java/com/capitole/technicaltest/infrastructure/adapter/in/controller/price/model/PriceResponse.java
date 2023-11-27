@@ -1,4 +1,4 @@
-package com.capitole.technicaltest.infrastructure.controller.model;
+package com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model;
 
 import com.capitole.technicaltest.domain.model.entity.Price;
 

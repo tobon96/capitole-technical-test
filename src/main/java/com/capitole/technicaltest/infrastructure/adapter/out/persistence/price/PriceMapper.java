@@ -1,11 +1,11 @@
-package com.capitole.technicaltest.infrastructure.adapter.price;
+package com.capitole.technicaltest.infrastructure.adapter.out.persistence.price;
 
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Price;
 import com.capitole.technicaltest.domain.model.entity.Product;
 import com.capitole.technicaltest.domain.model.valueobject.Currency;
 import com.capitole.technicaltest.domain.model.valueobject.DateRange;
-import com.capitole.technicaltest.infrastructure.adapter.price.entity.PriceEntity;
+import com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity.PriceEntity;
 
 public class PriceMapper {
 

@@ -1,4 +1,4 @@
-package com.capitole.technicaltest.infrastructure.adapter.price.entity;
+package com.capitole.technicaltest.infrastructure.adapter.out.persistence.price.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
