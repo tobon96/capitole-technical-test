@@ -1,11 +1,11 @@
-package com.capitole.technicaltest.infrastructure.controller;
+package com.capitole.technicaltest.infrastructure.adapter.in.controller.price;
 
 import com.capitole.technicaltest.application.port.in.GetPriceWithHigherPriorityQuery;
 import com.capitole.technicaltest.domain.model.entity.Brand;
 import com.capitole.technicaltest.domain.model.entity.Product;
-import com.capitole.technicaltest.infrastructure.controller.model.Error;
-import com.capitole.technicaltest.infrastructure.controller.model.PriceResponse;
-import com.capitole.technicaltest.infrastructure.controller.model.Response;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.PriceResponse;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.Response;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.Error;
 import jakarta.validation.Valid;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

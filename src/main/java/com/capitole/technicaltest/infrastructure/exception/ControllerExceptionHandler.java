@@ -1,8 +1,9 @@
 package com.capitole.technicaltest.infrastructure.exception;
 
 import com.capitole.technicaltest.application.exception.ResourceNotAvailableException;
-import com.capitole.technicaltest.infrastructure.controller.model.Error;
-import com.capitole.technicaltest.infrastructure.controller.model.Response;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.Error;
+import com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model.Response;
+import org.slf4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -13,6 +14,12 @@ import java.util.Objects;
 
 @RestControllerAdvice
 public class ControllerExceptionHandler {
+
+  private final Logger logger;
+
+  public ControllerExceptionHandler(Logger logger) {
+    this.logger = logger;
+  }
 
   @ExceptionHandler(MethodArgumentTypeMismatchException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -31,6 +38,7 @@ public class ControllerExceptionHandler {
   @ExceptionHandler(value = {Exception.class})
   @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
   public Response<Object, Error> handleUncaughtException(final Exception ex) {
+    logger.error("Uncaught exception", ex);
     return Response.error(
         Error.builder()
             .code("uncaughtException")

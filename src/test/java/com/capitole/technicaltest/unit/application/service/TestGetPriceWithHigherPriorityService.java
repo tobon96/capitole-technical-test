@@ -12,7 +12,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.Logger;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,13 +23,16 @@ import java.util.UUID;
 import static com.capitole.technicaltest.unit.factory.domain.PriceFactory.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class TestGetPriceWithHigherPriorityService {
 
   @Mock
   private PriceRepository priceRepository;
+
+  @Spy
+  private Logger logger;
 
   @InjectMocks
   private GetPriceWithHigherPriorityService service;
@@ -66,6 +71,8 @@ class TestGetPriceWithHigherPriorityService {
 
     // Then
     assertEquals("Price is not available", exception.getMessage());
+    verify(logger, times(1))
+        .error("Price not available for parameters {}, {}, {}", brand.id(), product.id(), date);
   }
 
   private Price buildExpectedPrice() {

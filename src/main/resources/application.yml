@@ -20,3 +20,6 @@ spring:
     locations: classpath:db/migration
     enabled: true
     clean-disabled: false
+logging:
+  level:
+    root: WARN

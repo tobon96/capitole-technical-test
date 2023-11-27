@@ -1,4 +1,4 @@
-package com.capitole.technicaltest.infrastructure.controller.model;
+package com.capitole.technicaltest.infrastructure.adapter.in.controller.price.model;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
